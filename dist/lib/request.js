@@ -3,7 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const undici_1 = require("undici");
 const iconv_lite_1 = require("iconv-lite");
 const cheerio_1 = require("cheerio");
 const chardet_1 = __importDefault(require("chardet"));
@@ -42,7 +41,7 @@ async function requestAndResultsFormatter(options) {
     let body;
     let response;
     try {
-        response = await (0, undici_1.fetch)(options.url || '', {
+        response = await fetch(options.url || '', {
             signal: AbortSignal.timeout((options.timeout || 10) * 1000),
             headers: { Origin: options.url, Accept: 'text/html' },
             ...options.fetchOptions,
