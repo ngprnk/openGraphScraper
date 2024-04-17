@@ -1,4 +1,3 @@
-import { fetch } from 'undici';
 import { decode } from 'iconv-lite';
 import { CheerioAPI, load } from 'cheerio';
 import chardet from 'chardet';
